@@ -47,8 +47,8 @@ class Videos(BaseAPI):
             timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
     ) -> VideoObject:
 
-        if not model and not model:
-            raise ValueError("At least one of `model` and `prompt` must be provided.")
+        if not image_url and not prompt:
+            raise ValueError("At least one of `image_url` and `prompt` must be provided.")
         body = deepcopy_minimal(
             {
                 "model": model,
